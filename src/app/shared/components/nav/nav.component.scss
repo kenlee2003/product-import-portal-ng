@@ -1,0 +1,189 @@
+$logoBlue: #398bf7;
+$navIconGery: #687384;
+$navIconGeryFilter: invert(45%) sepia(33%) saturate(215%) hue-rotate(177deg) brightness(91%) contrast(89%);
+
+.nav-button { 
+  position: fixed; 
+  z-index: 999; 
+  top: 12px; 
+  left: 80px; 
+  filter: $navIconGery;
+}
+.nav-button.fixed-nav { 
+  left: 313px; 
+  transition: 0.2s ease-in; 
+}
+
+.nav { 
+  display: block; 
+  width: 67px; 
+  height: 100%; 
+  position: fixed; 
+  background: #ffffff; 
+  color: $navIconGery; 
+  transition: 0.2s ease-in; 
+  z-index: 999; 
+  .nav-wrapper {
+    height: 100%;
+    .nav-items { 
+      height: 100%;
+      background: #ffffff; 
+      .sidebar-nav {
+        position: relative;
+        height: calc(100% - 185px);
+        overflow-y: auto;
+      }
+      ul { 
+        padding-left: 0; 
+        li { 
+          list-style: none; 
+          padding: 10px 20px; 
+          font-size: 14px; 
+          .nav-item { 
+            cursor: pointer;
+            .nav-icon { 
+              font-size: 25px; 
+              padding-right: 10px; 
+              vertical-align: middle; 
+              filter: $navIconGeryFilter;
+            }
+            .nav-icon.arrow-right { 
+              transition: all 0.3s ease-out; 
+            }
+            .nav-icon.arrow-right.arrow-down { 
+              transform: rotate(90deg) translate(0, 0); 
+            }
+            .nav-item-text { 
+              display: none; 
+              vertical-align: middle; 
+              span { 
+                vertical-align: middle;
+              }
+              .nav-icon { 
+                position: absolute; 
+                padding: 0 5px; 
+              }
+            }
+            .nav-sub-item {
+              display: none; 
+            }
+            ul {
+              li { 
+                padding: 20px 0 0 35px; 
+              }
+            }
+          }
+        }
+        li.nav-header { 
+          padding: 25px 20px 15px; 
+          border-bottom: 1px solid rgba(120, 130, 140, 0.13); 
+          margin-bottom: 10px; 
+          .header-title { 
+            display: none; 
+            h2 {
+              sup { 
+                color: $logoBlue; 
+              }
+            } 
+          }
+          .logo-element { 
+            font-size: 20px; 
+            padding-bottom: 40px; 
+            display: block; 
+            sup { 
+              color: $logoBlue; 
+            }
+          }
+          .profile-element {
+            .profile-icon { 
+              display: inline-block; 
+              vertical-align: middle;
+              .material-icons-two-tone { 
+                font-size: 25px; 
+                filter: $navIconGeryFilter;
+              }
+            }
+            .profile-info {
+              display: none;
+              span { 
+                padding-right: 5px;
+               }
+            }
+          }
+        }
+      }
+    }
+  } 
+}
+.nav.nav-open { 
+  width: 300px; 
+  transition: 0.2s ease-in; 
+  .nav-wrapper {
+    .nav-items {
+      ul {
+        li {
+          .nav-item {
+            .nav-item-text { 
+              display: inline-block; 
+            }
+            .nav-sub-item { 
+              display: none;
+            }
+            .nav-sub-item-open { 
+              display: block; 
+              transition: 0.2s ease-in;
+            }
+          }
+        }
+        li.nav-header {
+          .header-title { 
+            display: block;
+          }
+          .logo-element { 
+            display: none; 
+          }
+          .profile-element {
+            .profile-icon { 
+              padding-right: 10px;
+            }
+            .profile-info { 
+              display: inline-block; 
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 2s;
+  -o-animation: fadeIn 2s;
+  -ms-animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}

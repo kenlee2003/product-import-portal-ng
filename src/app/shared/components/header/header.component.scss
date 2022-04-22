@@ -1,0 +1,18 @@
+$white: #ffffff;
+$navIconBlue: invert(50%) sepia(10%) saturate(664%) hue-rotate(177deg) brightness(87%) contrast(91%); 
+
+.header-nav { 
+  background: $white; 
+  color: #687384; 
+  box-shadow: 1px 0px 7px rgb(0 0 0 / 5%); 
+  position: fixed;
+  z-index: 2;
+  .spacer { 
+    flex: 1 1 auto; 
+  }
+  .logout-icon {
+    .material-icons-two-tone { 
+      filter: $navIconBlue;
+    }
+  }
+}

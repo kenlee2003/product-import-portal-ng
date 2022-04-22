@@ -1,0 +1,21 @@
+<div class="page-breadcrumb">
+  <div class="d-md-flex align-items-center">
+    <h3 class="page-title">{{selectedBreadcrumb?.name}}</h3>
+    <div class="breadcrumb">
+      <ol>
+        <li>
+          <a (click)="changeRoute('dashboard')">Dashboard</a>
+        </li>
+        <li>
+            <span>{{selectedBreadcrumb?.parent}}</span>
+        </li>
+        <li>
+          <a (click)="changeRoute(selectedBreadcrumb?.routeName)">{{selectedBreadcrumb?.name}}</a>
+        </li>
+        <li *ngIf="actionRoute">
+          <span>{{actionRoute}}</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>

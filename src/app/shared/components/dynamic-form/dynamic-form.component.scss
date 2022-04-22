@@ -1,0 +1,31 @@
+$white: #ffffff;
+$logoBlue: #398bf7;
+$grey: #99abb4;
+$navIconGrey: #687384;
+
+.data-form {
+  background: $white;
+  padding: 10px;
+  margin: 20px;
+  .form-title {
+    padding: 15px 10px 0;
+    h5 {
+      font-size: 18px;
+      color: $navIconGrey;
+    }
+  }
+  form {
+    padding: 0 80px;
+  }
+  .btn-group {
+    display: block;
+    padding: 10px 0;
+    button {
+      float: right;
+      margin: 10px;
+      .material-icons {
+        padding: 5px;
+      }
+    }
+  }
+}

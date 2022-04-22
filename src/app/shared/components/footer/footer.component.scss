@@ -1,0 +1,25 @@
+$white: #ffffff;
+$logoBlue: #398bf7;
+$navIconGery: #687384;
+
+.footer { 
+  width: 100%; 
+  min-height: 50px; 
+  background: $white; 
+  position: fixed; 
+  bottom: 0; 
+  z-index: 999;
+  .copyright { 
+    
+    float: right; 
+    color: $navIconGery; 
+    font-size: 14px; 
+    padding: 0 20px; 
+    p { 
+      margin: 14px 0;
+      sup { 
+        color: $logoBlue; 
+      }
+    }
+  }
+}

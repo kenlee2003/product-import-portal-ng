@@ -1,0 +1,35 @@
+$white: #ffffff;
+$logoBlue: #398bf7;
+$grey: #99abb4;
+$navIconGrey: #687384;
+
+.page-breadcrumb {
+  .page-title {
+    color: $logoBlue;
+    font-size: 22px;
+  }
+}
+.breadcrumb {
+  margin-left: auto;
+  ol {
+    font-size: 12px;
+    list-style: none;
+    margin: 0;
+    margin-left: auto;
+    li {
+      display: inline-block;
+      color: $grey;
+      a {
+        color: $logoBlue;
+        cursor: pointer;
+      }
+    }
+    li + li:before {
+      font-family: "Material Icons";
+      padding: 0 10px;
+      color: $grey;
+      content: "arrow_forward_ios";
+      vertical-align: top;
+    }
+  }
+}

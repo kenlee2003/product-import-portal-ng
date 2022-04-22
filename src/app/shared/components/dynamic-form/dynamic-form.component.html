@@ -1,0 +1,27 @@
+<div class="data-form">
+  <div class="form-title">
+    <h5>{{title}}</h5>
+  </div>
+  <div *ngIf="dataHeaders">
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <mat-form-field appearance="standard" *ngFor="let dataHeader of dataHeaders">
+          <mat-label>{{dataHeader.label}}</mat-label>
+          <input matInput placeholder="{{dataHeader.label}}" required formControlName="{{dataHeader.key}}">
+          <mat-error *ngIf="!isValid">{{dataHeader.label}} is required</mat-error>
+        </mat-form-field>
+        <div class="btn-group">
+          <button mat-stroked-button (click)="back()">
+            <span class="material-icons">arrow_back</span>Cancel
+          </button>
+          <button type="reset" mat-flat-button color="accent" (click)="refreshForm()">
+            <span class="material-icons">refresh</span>Reset
+          </button>
+          <button type="submit" mat-flat-button color="primary">
+            <span class="material-icons">add</span>Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

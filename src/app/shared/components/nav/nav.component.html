@@ -1,0 +1,57 @@
+<button mat-icon-button class="nav-button" (click)="navStatus()" [ngClass]="{'fixed-nav': !autoNav}">
+  <mat-icon *ngIf="autoNav">menu</mat-icon>
+  <mat-icon *ngIf="!autoNav">close</mat-icon>
+</button>
+<nav class="nav" [ngClass]="{'nav-open': showNav}" (mouseover)="showNav=true" (mouseout)="autoNav? showNav=false : showNav=true">
+  <div class="nav-wrapper">
+    <div class="nav-items">
+      <ul [ngClass]="{'fade-in': showNav}">
+        <li class="nav-header">
+          <div class="header-title">
+            <h2>Loyalty Platform <sup>Plus</sup></h2>
+          </div>
+          <div class="logo-element">
+            LY<sup>+</sup>
+          </div>
+          <div class="profile-element">
+            <div class="profile-icon">
+              <span class="material-icons-two-tone">account_circle</span>
+            </div>
+            <div class="profile-info">
+              <span>Eric Lai</span>
+              <small>(Administrator)</small>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="sidebar-nav">
+        <ul [ngClass]="{'fade-in': showNav}">
+          <li *ngFor="let navItem of navData">
+            <div *ngIf="!navItem.children">
+              <div class="nav-item" (click)="changeRoute(navItem.routeName)">
+                <span class="material-icons-two-tone nav-icon">{{navItem.icon}}</span>
+                <span class="nav-item-text">{{navItem.name}}</span>
+              </div>  
+            </div>
+            <div *ngIf="navItem.children">
+              <div class="nav-item">
+                <span class="material-icons-two-tone nav-icon">{{navItem.icon}}</span>
+                <div class="nav-item-text" (click)="triggerSubNav(navItem.name)">
+                  <span>{{navItem.name}}</span>
+                  <span class="material-icons-two-tone nav-icon arrow-right" [ngClass]="{'arrow-down': activeSubNav.includes(navItem.name)}">chevron_right</span>
+                </div>
+                <ul class="nav-sub-item" [ngClass]="{'nav-sub-item-open': activeSubNav.includes(navItem.name) && showNav}">
+                  <li *ngFor="let childItem of navItem.children">
+                    <div class="nav-item" (click)="changeRoute(childItem.routeName)">
+                      <span class="nav-item-text">{{childItem.name}}</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>  
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

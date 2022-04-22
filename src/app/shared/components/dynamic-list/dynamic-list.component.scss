@@ -1,0 +1,36 @@
+$white: #ffffff;
+$logoBlue: #398bf7;
+$grey: #99abb4;
+$navIconGrey: #687384;
+
+.data-table {
+  background: $white;
+  padding: 20px 30px;
+  .table-title {
+    h4 {
+      font-size: 18px;
+      color: $navIconGrey;
+    }
+  }
+  .action-box {
+    .filter {
+      display: inline-block;
+      mat-form-field {
+        width: 100%;
+      }
+    }
+    .add-btn {
+      float: right;
+      padding: 10px 0;
+      .material-icons {
+        padding: 5px;
+      }
+    }
+  }
+  .mat-table {
+    width: 100%;
+    p {
+      margin: 10px 0;
+    }
+  }
+}
